@@ -48,3 +48,28 @@ Raw and processed neuroimaging data are excluded from Git.
 
 The dataset snapshot/version will be retained in the project
 documentation so that analyses can be tied to a specific dataset release.
+
+## Resting-State Acquisition Timing
+
+The resting-state BOLD scans contain 152 retained volumes
+with a repetition time (TR) of 2 seconds, corresponding to
+304 seconds of retained BOLD sampling.
+
+The physiology recordings span 312 seconds.
+
+The dataset README explains the 8-second discrepancy as
+four preliminary scanner TRs (4 × 2 seconds) performed
+before the retained BOLD series.
+
+This supports a candidate 8-second offset between the
+physiology recording and retained BOLD acquisition.
+
+Synchronization must nevertheless be verified against
+scan-specific acquisition or trigger information before
+physiological regressors are constructed. The NIfTI
+toffset=0 and physiology StartTime=0 fields do not
+independently establish synchronization.
+
+Physiology will initially be used for secondary quality
+control and sensitivity analyses. It is not mandatory
+for inclusion in the primary BOLD analysis.
